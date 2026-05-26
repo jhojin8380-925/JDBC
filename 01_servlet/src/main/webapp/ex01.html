@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>1. GET 방식 주문</h2>
+	<!-- action : 서버명 작성(서블릿) 
+	     method : 데이터 전달 방식(grt, post) -->
+	<form action="methodTest" method = "get">
+		메뉴 : <input type = 'text' name = 'menu'>
+		<input type = "submit" value = "GET으로 주문">
+		<!-- 이 버튼을 누르는 순간, 브라어즌 설정된 method방식에 맞게
+		데이터를 포장하고 action 주소로 전달한다 --> 
+	</form>
+	
+	<h2>2. POST 방식 주문</h2>
+	<!-- action : 서버명 작성(서블릿) 
+	     method : 데이터 전달 방식(grt, post) -->
+	<form action="methodTest" method = "post">
+		메뉴 : <input type = 'text' name = 'menu'>
+		<input type = "submit" value = "POST으로 주문">
+		<!-- 이 버튼을 누르는 순간, 브라어즌 설정된 method방식에 맞게
+		데이터를 포장하고 action 주소로 전달한다 --> 
+	</form>
+</body>
+</html>
