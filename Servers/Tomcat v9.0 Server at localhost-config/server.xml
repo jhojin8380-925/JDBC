@@ -162,7 +162,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="01_servlet" path="/01_servlet" reloadable="true" source="org.eclipse.jst.jee.server:01_servlet"/><Context docBase="02_jsp" path="/02_jsp" reloadable="true" source="org.eclipse.jst.jee.server:02_jsp"/><Context docBase="03_mvc" path="/03_mvc" reloadable="true" source="org.eclipse.jst.jee.server:03_mvc"/><Context docBase="04_session" path="/04_session" reloadable="true" source="org.eclipse.jst.jee.server:04_session"/><Context docBase="05_cookie" path="/05_cookie" reloadable="true" source="org.eclipse.jst.jee.server:05_cookie"/></Host>
+      <Context docBase="01_servlet" path="/01_servlet" reloadable="true" source="org.eclipse.jst.jee.server:01_servlet"/><Context docBase="02_jsp" path="/02_jsp" reloadable="true" source="org.eclipse.jst.jee.server:02_jsp"/><Context docBase="03_mvc" path="/03_mvc" reloadable="true" source="org.eclipse.jst.jee.server:03_mvc"/><Context docBase="04_session" path="/04_session" reloadable="true" source="org.eclipse.jst.jee.server:04_session"/><Context docBase="05_cookie" path="/05_cookie" reloadable="true" source="org.eclipse.jst.jee.server:05_cookie"/><Context docBase="article_web" path="/article_web" reloadable="true" source="org.eclipse.jst.jee.server:article_web"/></Host>
     </Engine>
   </Service>
 </Server>

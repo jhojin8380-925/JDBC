@@ -2,7 +2,10 @@ package article;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArticleDAO {
 	
@@ -55,5 +58,64 @@ public class ArticleDAO {
 			}
 		}		
 	} // articleInsert
+	
+//	2. 게시글 리스트(select all)
+	public List<ArticleDTO> selectAll() {
+		List<ArticleDTO> list = new ArrayList<>(); // 회원 정보들을 저장할 리스트
+		String sql = "select * from article order by article_id";
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+//			select 이므로 executeQuery() 를 사용하여 결과 집합(ResultSet)을 받습니다
+			rs = pstmt.executeQuery();
+
+//			데이터가 있는 만큼 반복해서 한줄씩 읽는다
+			while (rs.next()) {
+//				현재 줄에서 데이터 추출
+				int id = rs.getInt("article_id");
+				String title = rs.getString("article_title");
+				String body = rs.getString("article_body");
+
+//				읽어온 데이터로 DTO 객체 생성
+				ArticleDTO dto = new ArticleDTO(id, title, body);
+
+//				바구니 (List)에 한명씩 추가
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+//			자원해제
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+
+	}
+	
 	
 }

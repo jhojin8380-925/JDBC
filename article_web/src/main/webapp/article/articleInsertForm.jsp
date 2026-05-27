@@ -57,7 +57,9 @@ input[type="text"]{
 			<input type="text" id="articleBody" name="articleBody" placeholder="내용을 입력하세요" required>
 		</p>
 		<p>
-			<button type="submit" class="btn-submit">등록</button>
+			<button type="submit" class="btn btn-submit">등록</button>
+			<button type="button" class="btn btn-cancel"
+			onclick="location.href='${pageContext.request.contextPath}/articleList'">취소</button>
 		</p>
 	</form>
 	
