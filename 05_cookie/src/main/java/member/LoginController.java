@@ -1,10 +1,12 @@
 package member;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,8 +47,30 @@ public class LoginController extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		MemberDTO loginMember = dao.login(memberName, memberPwd);
 		
+//		아이디 저장 체크박스 값 : 체크하면 "on" 체크 안하면 null
+		
+		String saveId = request.getParameter("saveId");
+		
+		
 //		4) 로그인 성공 여부 판단 
 		if(loginMember != null) {
+			
+//			-- 쿠키 처리 -------------------
+			if(saveId.equals("on")) {
+//				"아이디 저장" 체크 박스가 체크가 된 경우
+//				사용자 이름을 쿠키에 30일 저장
+				Cookie saveNameCookie = new Cookie("saveName", URLEncoder.encode(memberName, "UTF-8"));
+				saveNameCookie.setMaxAge(60*60*24*30); //30일 (초단위)
+				response.addCookie(saveNameCookie);
+			}else {
+				Cookie deleteCookie = new Cookie("saveName", "");
+				deleteCookie.setMaxAge(0);
+				response.addCookie(deleteCookie);
+			}
+				
+//			
+				
+//			-- 세션 처리
 //			- 성공 : session에 회원 정보 저장 후 목록페이지로 이동
 //			getSession() : 세션이 없으면 새로 만들고, 있으면 기존 세션을 가져온다
 			HttpSession session = request.getSession();

@@ -5,80 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<style>
-body {
-   font-family: 'Malgun Gothic', sans-serif;
-   background: #f7f8fa;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   min-height: 100vh;
-   margin: 0;
-}
-
-.login-box {
-   background: white;
-   border-radius: 16px;
-   padding: 40px 36px;
-   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
-   width: 340px;
-}
-
-h2 {
-   text-align: center;
-   margin-bottom: 28px;
-   color: #1a365d;
-}
-
-label {
-   display: block;
-   font-size: 0.88rem;
-   color: #4a5568;
-   margin-bottom: 4px;
-}
-
-input[type=text], input[type=password] {
-   width: 100%;
-   padding: 10px 14px;
-   border: 1px solid #e2e8f0;
-   border-radius: 8px;
-   font-size: 0.95rem;
-   box-sizing: border-box;
-   margin-bottom: 16px;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-   outline: none;
-   border-color: #3182ce;
-}
-
-.btn-login {
-   width: 100%;
-   padding: 12px;
-   background: #3182ce;
-   color: white;
-   border: none;
-   border-radius: 8px;
-   font-size: 1rem;
-   cursor: pointer;
-   font-family: 'Malgun Gothic', sans-serif;
-}
-
-.btn-login:hover {
-   background: #2b6cb0;
-}
-
-.error-msg {
-   background: #fff5f5;
-   border: 1px solid #fed7d7;
-   color: #c53030;
-   border-radius: 8px;
-   padding: 10px 14px;
-   font-size: 0.85rem;
-   margin-bottom: 16px;
-   text-align: center;
-}
-</style>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/login.css">
 </head>
 <body>
     <div class = "login-box">
@@ -100,10 +27,21 @@ input[type=text]:focus, input[type=password]:focus {
           <input type="password" id="memberPwd" name="memberPwd"
           placeholder="비밀번호를 입력하세요">
           
+          <!-- 아이디 저장 체크박스 
+         	name="saveId" : LoginController 에서 읽으면
+         	체크하면 "on" 체크 안하면 null이 서버에 전달된다 -->
+          <div class="save-id">
+          		<input type="checkbox" id="saveId" name="saveId">
+          		<label for='saveId'>아이디 저장</label>
+          </div>
+                    
           <button type="submit" class="btn-login">로그인</button>
        </form>
     
     </div>
+    
+    <!-- js파일 연결 -->
+    <script src="${pageContext.request.contextPath}/resources/js/login.js"></script>
 </body>
 </html>
 

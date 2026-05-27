@@ -1,0 +1,89 @@
+body {
+   font-family: 'Malgun Gothic', sans-serif;
+   background: #f7f8fa;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   margin: 0;
+}
+
+.login-box {
+   background: white;
+   border-radius: 16px;
+   padding: 40px 36px;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+   width: 340px;
+}
+
+h2 {
+   text-align: center;
+   margin-bottom: 28px;
+   color: #1a365d;
+}
+
+label {
+   display: block;
+   font-size: 0.88rem;
+   color: #4a5568;
+   margin-bottom: 4px;
+}
+
+input[type=text], input[type=password] {
+   width: 100%;
+   padding: 10px 14px;
+   border: 1px solid #e2e8f0;
+   border-radius: 8px;
+   font-size: 0.95rem;
+   box-sizing: border-box;
+   margin-bottom: 16px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+   outline: none;
+   border-color: #3182ce;
+}
+
+/* 아이디 저장 체크박스 영역 */
+.save-id {
+    display: flex;
+    align-items: center;
+    gap: 6px;           /* 체크박스와 글자 사이 간격 */
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    color: #4a5568;
+    cursor: pointer;
+}
+
+/* 체크박스 라벨 — cursor:pointer 로 마우스를 올리면 손가락 모양 */
+.save-id label {
+    margin-bottom: 0;   /* 기본 label의 margin-bottom 제거 */
+    cursor: pointer;
+}
+
+.btn-login {
+   width: 100%;
+   padding: 12px;
+   background: #3182ce;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   font-size: 1rem;
+   cursor: pointer;
+   font-family: 'Malgun Gothic', sans-serif;
+}
+
+.btn-login:hover {
+   background: #2b6cb0;
+}
+
+.error-msg {
+   background: #fff5f5;
+   border: 1px solid #fed7d7;
+   color: #c53030;
+   border-radius: 8px;
+   padding: 10px 14px;
+   font-size: 0.85rem;
+   margin-bottom: 16px;
+   text-align: center;
+}
