@@ -22,6 +22,12 @@ input[type="text"]{
    border: 1px solid #ccc;
    border-radius: 4px;
 }
+textarea{
+   padding: 6px;
+   margin: 6px 0;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
 
 .btn {
    padding: 8px 20px;
@@ -54,7 +60,8 @@ input[type="text"]{
 		</p>
 		<p>
 			<label for="articleBody">내용 :</label>
-			<input type="text" id="articleBody" name="articleBody" placeholder="내용을 입력하세요" required>
+			<!-- <input type="text" id="articleBody" name="articleBody" placeholder="내용을 입력하세요" required> -->
+			<textarea id="articleBody" name="articleBody" rows="10" cols="30" placeholder="내용을 입력하세요" required></textarea>
 		</p>
 		<p>
 			<button type="submit" class="btn btn-submit">등록</button>

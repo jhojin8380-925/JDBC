@@ -46,9 +46,9 @@ public class ArticleInsertController extends HttpServlet {
 //		sendRedirect를 쓰는 이유 : 새로고침 시 insert가 중복 실행되는 것을 방지
 //		request.getContextPath() : 프로젝트의 context root 경로를 가져온다
 //		(ex : /03_mvc)
-//		+ "/memberList" : 목록 서블릿의 URL 매핑 경로 
+//		+ "/articleList" : 목록 서블릿의 URL 매핑 경로 
 		
-//		response.sendRedirect(request.getContextPath()+"/articleList");
+		response.sendRedirect(request.getContextPath()+"/articleList");
 		
 				
 	}

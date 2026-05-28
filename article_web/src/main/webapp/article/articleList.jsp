@@ -66,7 +66,7 @@ a:hover {
 
 	<!-- 표현식으로 전체 회원 수 출력 -->
 	<p>
-		전체 게시글 수 : <strong><%=articleList.size()%>명</strong>
+		전체 게시글 수 : <strong><%=articleList.size()%></strong> 개
 	</p>
 
 	<%-- 회원 등록 페이지로 이동하는 링크 --%>
