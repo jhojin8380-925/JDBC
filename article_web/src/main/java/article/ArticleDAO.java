@@ -121,7 +121,7 @@ public class ArticleDAO {
 	public void updateArticle(ArticleDTO dto) {
 		int result = 0;
 
-		String sql = "update article set article_title = ?, article_body = ?";
+		String sql = "update article set article_title = ?, article_body = ? where article_id = ?";
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -132,6 +132,7 @@ public class ArticleDAO {
 
 			pstmt.setString(1, dto.getArticleTitle());
 			pstmt.setString(2, dto.getArticleBody());
+			pstmt.setInt(3, dto.getArticleId());
 
 			result = pstmt.executeUpdate();
 
